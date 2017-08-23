@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+   
+   .info {
+    padding-left: 0 !important;
+}
+
+.popover {
+    max-width: 160px !important;
+    left: 50% !important;
+    margin-left: -80px !important;
+}
+
+.popover-content {
+    width: 100% !important;
+}
+
+.btn-group-justified
+ a {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+.popover>.arrow:after,.popover>.arrow{display:none;}
+}
+
