@@ -1,4 +1,5 @@
 $(document).ready ->
+  console.log "i am herer"
   dateToday = new Date();
   start = new Date();
 
@@ -33,31 +34,54 @@ $(document).ready ->
 
   $("body").on {
     mouseover: (e) ->
-      content = "<div class='event-tooltip-content container-fluid'>
-                  <i class='fa fa-spinner fa-spin hide' style='font-size:48px'>
-                  </i> 
-                  <div class='row'>
-                    <div class='checkbox'>
-                      <label class='radio-inline'>Available</label>
-                      <span class='glyphicon glyphicon-stop' aria-hidden='true' style='background-color:#24ec24;color:#24ec24'></span>
-                      
-                      <label class='radio-inline'>Booked</label>
-                      <span class='glyphicon glyphicon-stop' aria-hidden='true' style='background-color:#337ab7;color:#337ab7'></span></label>        
-                    </div>
-                  </div>
-                  <div class='row'>
-                    <div class='col-md-5'>
-                      <br>
-                    </div>
-                  </div>
-                  <div class='row'>
-                    <div class='btn-group btn-group-justified'>
-                      <a href='#' class='btn btn-primary breakfast' disabled='disabled' >Breakfast</a>
-                      <a href='#' class='btn btn-primary lunch' disabled= 'disabled' >Lunch</a>
-                      <a href='#' class='btn btn-primary dinner' disabled= 'disabled' >Dinner</a>
-                    </div>
-                  </div>
-             </div>"
+      content = "<div class='event-tooltip-content container-fluid'> 
+    <i class='fa fa-spinner fa-spin hide' style='font-size:48px'> </i> 
+    <div class='row'> 
+      <div class='checkbox'> 
+        <label class='radio-inline'>Available</label> 
+        <span class='glyphicon glyphicon-stop' aria-hidden='true' style='background-color:#5CB85C;color:#5CB85C'></span> 
+        <label class='radio-inline'>Booked</label> 
+        <span class='glyphicon glyphicon-stop' aria-hidden='true' style='background-color:#337ab7;color:#337ab7'></span> 
+      </div> 
+    </div>
+     <div class='row'> 
+      <div class='col-md-5'> 
+        <br> 
+      </div> 
+     </div> 
+    <div class='row extra-bottom-padding'>
+      <div class='col-sm-24'> 
+          <div class='col-sm-6'> 
+            <label class='radio-inline'>Breakfast</label>
+          </div>
+          <div class='col'> 
+            <button type='button' class='btn btn-success breakfast' aria-hidden='false'>Sponsor</button>
+          </div>
+      </div>
+    </div>
+    <div class='row extra-bottom-padding' >
+      <div class='col-sm-24'> 
+          <div class='col-sm-6'> 
+            <label class='radio-inline'>Lucnh</label>
+          </div>
+          <div class='col'> 
+            <button type='button' class='btn btn-success lunch' aria-hidden='false'>Sponsor</button>
+          </div>
+      </div>
+    </div>
+
+    <div class='row extra-bottom-padding'>
+      <div class='col-sm-24'> 
+          <div class='col-sm-6'> 
+            <label class='radio-inline'>Dinner</label>
+          </div>
+          <div class='col'> 
+            <button type='button' class='btn btn-success dinner' aria-hidden='false'>Sponsor</button>
+          </div>
+      </div>
+    </div> 
+    </div> 
+  </div>"
 
       ths = e.currentTarget
       window.events = e
@@ -77,20 +101,17 @@ $(document).ready ->
         current_date = $(ths).closest("td").data('year')+ '/'+ month + '/' + $(ths).html()
         current_val = null
         current_val = gon.dates_details[current_date]
-        if current_val != null || current_val != '' || current_val != undefined
-          if !current_val.breakfast
-            $(".breakfast").attr('disabled',false).css({"background-color":"#24ec24"})
-          if !current_val.lunch
-            $(".lunch").attr('disabled',false).css({"background-color":"#24ec24"})
-          if !current_val.dinner
-            $(".dinner").attr('disabled',false).css({"background-color":"#24ec24"})
+        if current_val != null || current_val != '' || typeof(current_val) != 'undefined'
 
           if current_val.breakfast
-            $(".breakfast").css({"pointer-events":"none"})
+            $(".breakfast").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
+            $(".breakfast").addClass("disabled")
           if current_val.lunch
-            $(".lunch").css({"pointer-events":"none"})
+            $(".lunch").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
+            $(".lunch").addClass("disabled")
           if current_val.dinner
-            $(".dinner").css({"pointer-events":"none"})
+            $(".dinner").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
+            $(".dinner").addClass("disabled")
   
 
     click: (e) ->

@@ -79,9 +79,9 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.3)
     multi_json (1.12.1)
+    mysql2 (0.3.21)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
     rabl-rails (0.5.1)
       activesupport (>= 4.2)
       concurrent-ruby (~> 1.0.0)
@@ -175,7 +175,7 @@ DEPENDENCIES
   gon
   jbuilder (~> 2.0)
   jquery-rails
-  pg
+  mysql2 (~> 0.3.18)
   rabl-rails
   rails (= 4.2.0)
   rails_12factor
