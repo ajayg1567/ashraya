@@ -105,13 +105,13 @@ $(document).ready ->
 
           if current_val.breakfast
             $(".breakfast").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
-            $(".breakfast").addClass("disabled").html("Booked")
+            $(".breakfast").addClass("disabled")
           if current_val.lunch
             $(".lunch").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
-            $(".lunch").addClass("disabled").html("Booked")
+            $(".lunch").addClass("disabled")
           if current_val.dinner
             $(".dinner").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
-            $(".dinner").addClass("disabled").html("Booked")
+            $(".dinner").addClass("disabled")
   
 
     click: (e) ->
