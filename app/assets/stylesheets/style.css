@@ -72,6 +72,9 @@ font-family: 'Crimson Text', serif;*/
 ====================================================================
 
  ***/
+.tp-banner{
+height: 500px !important;
+}
 
 body {
 	font-family: 'Montserrat', sans-serif;
