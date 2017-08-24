@@ -79,9 +79,9 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.3)
     multi_json (1.12.1)
+    mysql2 (0.3.21)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
     rabl-rails (0.5.1)
       activesupport (>= 4.2)
       concurrent-ruby (~> 1.0.0)
@@ -108,11 +108,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -175,10 +170,9 @@ DEPENDENCIES
   gon
   jbuilder (~> 2.0)
   jquery-rails
-  pg
+  mysql2 (~> 0.3.18)
   rabl-rails
   rails (= 4.2.0)
-  rails_12factor
   responders (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

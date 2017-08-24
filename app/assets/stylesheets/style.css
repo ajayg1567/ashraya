@@ -2840,6 +2840,7 @@ img{
 .what-we-do{
 	position:relative;
 	padding:100px 0px 70px;
+	margin-top: -7%;
 }
 
 .service-box{
@@ -5553,4 +5554,9 @@ img{
 
 .event-details .map-box{
 	position:relative;
+}
+
+.tp-banner{
+max-height: 500px !important;
+height: 500px !important;
 }
