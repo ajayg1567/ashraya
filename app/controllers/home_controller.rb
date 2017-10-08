@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   respond_to :html, :xml, :json
   # GET /homes
   # GET /homes.json
+  layout "application"
   def index
     
   end

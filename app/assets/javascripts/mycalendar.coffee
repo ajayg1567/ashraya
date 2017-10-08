@@ -1,5 +1,4 @@
 $(document).ready ->
-  console.log "i am herer"
   dateToday = new Date();
   start = new Date();
 
@@ -11,8 +10,7 @@ $(document).ready ->
       month = date.getMonth() + 1 
       month = if month.toString().length < 2 then '0'+ month.toString() else month
       dmy = date.getFullYear()+ '/'+ month + '/' + date.getDate()
-      console.log dmy
-      window.ths = $(this)
+      
       if $.inArray(dmy, gon.dates) >= 0
         elem = gon.dates_details[dmy]
         if elem.booked || ( elem.breakfast && elem.lunch && elem.dinner)
@@ -101,8 +99,7 @@ $(document).ready ->
         current_date = $(ths).closest("td").data('year')+ '/'+ month + '/' + $(ths).html()
         current_val = null
         current_val = gon.dates_details[current_date]
-        if current_val != null || current_val != '' || typeof(current_val) != 'undefined'
-
+        if current_val != null && current_val != '' && typeof(current_val) != 'undefined'
           if current_val.breakfast
             $(".breakfast").prop("aria-hidden",true).css({"background-color":"#337ab7","background-image":"linear-gradient(to bottom, #337ab7, #337ab7)"})
             $(".breakfast").addClass("disabled")
